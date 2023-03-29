@@ -1,0 +1,60 @@
+CREATE TABLE CLIENTE (id INT PRIMARY KEY, firstname VARCHAR(10), lastname VARCHAR(10), email VARCHAR(20));
+
+INSERT INTO CLIENTE  (id, firstname, lastname, email)
+VALUES 
+(34767675, 'Jenifer', 'Alvarez', 'jniferalvarez@gmail.com'),
+(35689487, 'Belen', 'Arguello', 'Belen.Arguello@gmail.com'),
+(30747685, 'Roberto', 'Fernandez', 'Rfernandez@gmail.com'),
+(32367071, 'Rebeca', 'Padilla', 'Rebecapadilla@gmail.com'),
+(33524967, 'Rafael', 'Guzman', 'Rafaguzman@gmail.com');
+
+CREATE TABLE CUENTA (id INT PRIMARY KEY, number INT(50), creation_date DATETIME(10), balance DECIMAL(20,3));
+
+INSERT INTO CUENTA (id, number, creation_date, balance)
+VALUES
+(54289, 425123, '23/05/1990', 814.56),
+(54290, 425895, '20/08/1992', 9714.6),
+(54291, 425873, '05/03/2004', 0),
+(54292, 425743, '30/10/2000', -74),
+(54293, 425417, '15/04/2011', 526471.52);
+
+CREATE TABLE LOANXCLIENTE (id INT PRIMARY KEY, payment DECIMAL(20,3), amount DECIMAL(20,3));
+
+INSERT INTO LOANXCLIENTE (id, payment, amount)
+VALUES
+(54289, 20000, 500000),
+(54290, 18900, 20000),
+(54291, 5000, 70000),
+(54292, 550.55, 100000),
+(54293, 10000, 50000);
+
+CREATE TABLE TRANSACCION (id INT PRIMARY KEY, type VARCHAR(10), amount DECIMAL(20,3), description VARCHAR(50), column VARCHAR(10));
+
+INSERT INTO TRANSACCION (id, type, amount, description, column)
+VALUES
+(54289, 'PRESTAMO', 50000, '', ''),
+(54290, 'TRANSFERENCIA', 1000, '','' ),
+(54291, 'PAGO', 4500,'', ''),
+(54292, 'TRANSFERECNIA', 450, '',''),
+(54293, 'PRESTAMO', 1000000,'','' );
+
+CREATE TABLE LOAN (id INT PRIMARY KEY, name VARCHAR(10), maxamount DECIMAL(20,3), payment DECIMAL(20,3));
+
+INSERT INTO LOAN (id, name, maxamount, payment)
+VALUES
+(54289, 'PRESTAMO HIPOTECARIO', 500000, 20000),
+(54290, 'PRESTAMO PERSONAL', 20000, 18900),
+(54291, 'PRESTAMO PERSONAL', 70000, 5000),
+(54292, 'PRESTAMO HIPOTEACRIO UVA', 100000, 550.55),
+(54293, 'PRESTAMO PERSONAL', 50000, 50000);
+
+CREATE TABLE CARD (id INT PRIMARY KEY, cardholder VARCHAR(50), type VARCHAR(10), color VARCHAR(10), number INT, cvv INT(5), thrudate DATETIME(10), fromdate DATETIME(10));
+
+INSERT INTO CARD (id, cardholder, type, color, number, cvv, thrudate, fromdate)
+VALUES
+(5428934767675, 'Jenifer Alvarez', 'Credito', 'CLASSIC', 2893476767, 526, '01/02/2023', '01/02/2033'),
+(5429035689487, 'Belen Arguello', 'Debito', 'BLACK', 2903568948, 452, '17/09/2019', '17/09/2029'),
+(5429130747685, 'Roberto Fernandez', 'Debito', 'PLATINUM', 2913074768, 481, '05/05/2021', '05/05/2031'),
+(5429232367071, 'Rebeca	Padilla', 'Credito', 'CLASSIC', 2923236707, 941, '10/08/2018', '10/08/2028'),
+(5429333524967, 'Rafael	Guzman', 'Credito','BLACK', 2933352496, 476, '20/05/2020', '20/05/2030');
+
